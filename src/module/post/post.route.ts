@@ -1,0 +1,10 @@
+import express from "express";
+import { postController } from "./post.controller";
+const route = express.Router();
+route.post("/create-post", postController.postCreateController);
+route.get("/", postController.getAllPostController);
+route.get("/:id", postController.singlePostController);
+route.patch("/:id", postController.uodatePostController);
+route.delete("/:id", postController.deletePostController);
+route.delete("/learn-agree", postController.learnAgreegateAndGropingController);
+export const postRouter = route;
